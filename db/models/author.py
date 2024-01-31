@@ -8,7 +8,7 @@ class Author(Base):
     __tablename__ = "authors"
 
     id: Mapped[int] = Column(Integer, primary_key=True, unique=True)
-    username: Mapped[str] = Column(String(128))
+    username: Mapped[str] = Column(String(128), unique=True)
 
     hashed_password: Mapped[str] = Column(String(256))
 

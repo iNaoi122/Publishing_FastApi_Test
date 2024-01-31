@@ -13,9 +13,9 @@ class Publish(Base):
     id: Mapped[int] = Column(Integer, primary_key=True, unique=True)
     text: Mapped[str] = Column(Text)
 
-    plus_vote: Mapped[int] = Column(Integer)
-    minus_vote: Mapped[int] = Column(Integer)
+    plus_vote: Mapped[int] = Column(Integer, default=0)
+    minus_vote: Mapped[int] = Column(Integer, default=0)
 
-    post_data: Mapped[str] = Column(Date, default=datetime.date.today())
+    post_data: Mapped[str] = Column(Date, default=datetime.datetime.now())
 
     author_id = Column(Integer, ForeignKey("authors.id"))

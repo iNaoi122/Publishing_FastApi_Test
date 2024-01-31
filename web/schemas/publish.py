@@ -1,10 +1,10 @@
 from pydantic import BaseModel
-from pydantic import PastDate
+from datetime import datetime
 
 
 class Publish(BaseModel):
     text: str
-    date: PastDate
+    date: datetime
     author: str
-    count_votes: str
-    rating: str
+    count_votes: int
+    rating: int
